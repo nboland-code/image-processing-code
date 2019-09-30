@@ -51,6 +51,17 @@ rootFolder = 'cifar10Test';
 imds_test = imageDatastore(fullfile(rootFolder, categories), ...
     'LabelSource', 'foldernames');
 
+labels = classify(net, imds_test);
+ii = randi(4000);
+im = imread(imds_test.Files{ii});
+imshow(im);
+if labels(ii) == imds_test.Labels(ii)
+   colorText = 'g'; 
+else
+    colorText = 'r';
+end
+title(char(labels(ii)),'Color',colorText);
+
 % This could take a while if you are not using a GPU
 confMat = confusionmat(imds_test.Labels, labels);
 confMat = confMat./sum(confMat,2);
