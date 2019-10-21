@@ -41,5 +41,6 @@ se = strel('line', 5,5);   %creating a vertical line shaped structuring element
 BW3 = imdilate(BW2, se);     %dilating the image to connect lines
 figure;
 imshow(BW3);
-
+%save the processed images to a folder 
+imwrite(BW3, 'C:\Users\nbtar\Documents\MSE 490\Processed Images\BW3_saved.tif');
 
