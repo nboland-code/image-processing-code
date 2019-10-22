@@ -1,4 +1,4 @@
-
+%VERSION 1 of Pre-processing code
 %specifying the folder where the files live.
 myFolder = 'C:\Users\nbtar\Documents\MSE 490\Raw Data';
 myNewFolder = 'C:\Users\nbtar\Documents\MSE 490\Processed Images';
